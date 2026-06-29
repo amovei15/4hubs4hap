@@ -82,11 +82,23 @@ def cta_duo():
         '</div>'
     )
 
+PLATFORMS = [("/windows/", "Windows"), ("/android/", "Android"), ("/iphone/", "iPhone"), ("/tv/", "TV")]
+NAV_MAIN = [("/", "Главная"), ("/skachat/", "Скачать"), ("/tarify/", "Тарифы"), ("/config/", "Конфигурации"), ("/podkluchenie/", "Подключение")]
+NAV_TAIL = [("/oshibki/", "Ошибки"), ("/faq/", "FAQ")]
+CHEV = '<svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>'
+
 def header(active):
-    links = "".join(
-        f'<a href="{u}"{" aria-current=\"page\"" if u==active else ""}>{html.escape(t)}</a>'
-        for u, t in NAV
+    def lnk(u, t):
+        return f'<a href="{u}"{" aria-current=\"page\"" if u==active else ""}>{html.escape(t)}</a>'
+    plat_active = ' data-active="1"' if active in [u for u, _ in PLATFORMS] else ''
+    plat_sub = "".join(lnk(u, t) for u, t in PLATFORMS)
+    links = "".join(lnk(u, t) for u, t in NAV_MAIN)
+    links += (
+        '<div class="nav-drop">'
+        f'<button type="button" class="nav-drop-btn"{plat_active} aria-haspopup="true">Платформы{CHEV}</button>'
+        f'<div class="nav-sub">{plat_sub}</div></div>'
     )
+    links += "".join(lnk(u, t) for u, t in NAV_TAIL)
     drawer = "".join(f'<a href="{u}">{html.escape(t)}</a>' for u, t in NAV)
     return (
         '<header class="nav"><div class="nav-inner">'
@@ -136,7 +148,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=3">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=4">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'
