@@ -103,12 +103,12 @@ p{margin:0 0 1rem;color:var(--ink-soft)}
 .cta-card .cta-go svg{width:16px;height:16px}
 .cta-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .cta-card:hover .cta-go{transform:translateX(3px)}
-.cta-lk{background:linear-gradient(135deg,var(--accent),var(--accent-soft));border-color:transparent;color:#fff;
-  box-shadow:0 14px 30px -16px var(--glow)}
-.cta-lk .cta-ic{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
-.cta-lk .cta-tx span{color:rgba(255,255,255,.82)}
-.cta-lk .cta-go{background:rgba(255,255,255,.16);color:#fff}
-.cta-lk:hover .cta-go{background:rgba(255,255,255,.28)}
+.cta-lk{background:var(--bg-card);color:var(--ink)}
+.cta-lk .cta-ic{background:linear-gradient(135deg,var(--accent),var(--accent-soft));color:#fff;box-shadow:0 8px 18px -10px var(--glow)}
+.cta-lk .cta-tx span{color:var(--muted)}
+.cta-lk .cta-go{background:var(--bg-card-2);color:var(--accent)}
+.cta-lk:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.cta-lk:hover .cta-go{background:color-mix(in srgb,var(--accent) 14%,var(--bg-card-2))}
 .cta-tg{background:var(--bg-card);color:var(--ink)}
 .cta-tg .cta-ic{background:#229ED9;color:#fff;box-shadow:0 8px 18px -10px rgba(34,158,217,.7)}
 .cta-tg .cta-go{background:var(--bg-card-2);color:var(--accent)}
