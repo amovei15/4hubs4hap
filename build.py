@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Static generator for 4hubs4hap.com (Happ hub). Outputs public/<slug>/index.html
-import os, html
+import os, html, json
 
 SITE = "https://4hubs4hap.com"
 COUNTER = "110249461"
@@ -46,6 +46,20 @@ THEME_TOGGLE_JS = (
 
 SUN = ('<svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
        '<svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>')
+
+with open(os.path.join(os.path.dirname(__file__), "keywords.json"), encoding="utf-8") as _kf:
+    KEYWORDS = json.load(_kf)
+
+def kw_block(page_key, title, intro):
+    items = KEYWORDS.get(page_key, [])
+    if not items:
+        return ""
+    spans = "".join(f'<span>{html.escape(p)}</span>' for p in items)
+    return (
+        '<section class="kw-sec"><div class="wrap">'
+        f'<div class="sec-head"><h2>{title}</h2><p>{intro}</p></div>'
+        f'<div class="kwc">{spans}</div></div></section>'
+    )
 
 def ico(p):
     return f'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
@@ -122,7 +136,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=2">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=3">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'
