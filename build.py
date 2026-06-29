@@ -36,12 +36,12 @@ METRIKA = (
 
 THEME_JS = (
     "<script>(function(){try{var t=localStorage.getItem('theme');"
-    "if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>"
+    "if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>"
 )
 THEME_TOGGLE_JS = (
-    "<script>function toggleTheme(){var d=document.documentElement,l=d.getAttribute('data-theme')==='light';"
-    "if(l){d.removeAttribute('data-theme');try{localStorage.setItem('theme','dark')}catch(e){}}"
-    "else{d.setAttribute('data-theme','light');try{localStorage.setItem('theme','light')}catch(e){}}}</script>"
+    "<script>function toggleTheme(){var d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';"
+    "if(dark){d.removeAttribute('data-theme');try{localStorage.setItem('theme','light')}catch(e){}}"
+    "else{d.setAttribute('data-theme','dark');try{localStorage.setItem('theme','dark')}catch(e){}}}</script>"
 )
 
 SUN = ('<svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
@@ -51,6 +51,22 @@ def ico(p):
     return f'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
 
 CHECK = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+
+TG_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.34 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.46-2.27 2.18c-.25.25-.46.46-.94.46l.33-4.78L18.6 6.2c.38-.34-.08-.53-.59-.19L7.4 12.86l-4.64-1.45c-1.01-.32-1.03-1.01.21-1.49l18.15-7c.84-.31 1.58.2 1.31 1.41z"/></svg>'
+KEY_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M11.5 11.5 21 2M16 7l3 3"/></svg>'
+ARROW = '<svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+
+def cta_duo():
+    return (
+        '<div class="cta-duo">'
+        f'<a href="{LK}" class="cta-card cta-lk"><span class="cta-ic">{KEY_ICON}</span>'
+        '<span class="cta-tx"><b>Личный кабинет</b><span>Оформить доступ и получить конфигурацию</span></span>'
+        f'{ARROW}</a>'
+        f'<a href="{TG}" class="cta-card cta-tg"><span class="cta-ic">{TG_ICON}</span>'
+        '<span class="cta-tx"><b>Telegram-бот</b><span>Быстрый доступ и поддержка 24/7</span></span>'
+        f'{ARROW}</a>'
+        '</div>'
+    )
 
 def header(active):
     links = "".join(
@@ -106,7 +122,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=1">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=2">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'

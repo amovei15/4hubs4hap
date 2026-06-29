@@ -3,7 +3,7 @@
 
 def build(g):
     page = g["page"]; ico = g["ico"]; CHECK = g["CHECK"]; crumbs = g["crumbs"]
-    LK = g["LK"]; TG = g["TG"]
+    LK = g["LK"]; TG = g["TG"]; cta_duo = g["cta_duo"]
 
     def card(icon, h, p):
         return f'<div class="card"><div class="ico">{ico(icon)}</div><h3>{h}</h3><p>{p}</p></div>'
@@ -16,8 +16,7 @@ def build(g):
 
     def band(h, sub):
         return ('<section><div class="wrap"><div class="band"><h2>' + h + '</h2><p class="muted">' + sub +
-                f'</p><div class="hero-actions"><a href="{LK}" class="btn btn-primary">Получить доступ</a>'
-                f'<a href="{TG}" class="btn btn-ghost">Открыть в Telegram</a></div></div></div></section>')
+                '</p>' + cta_duo() + '</div></div></section>')
 
     # icon paths
     I_shield = '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'
@@ -35,10 +34,7 @@ def build(g):
       <span class="hero-tag">{ico(I_zap)} Happ — быстрый клиент для свободного интернета</span>
       <h1>Happ — один <span>хаб</span> для установки, ключей и подключения</h1>
       <p class="hero-lead">Happ Hub собирает в одном месте всё, что нужно для работы с приложением Happ: ссылки на загрузку под Windows, Android, iPhone и ТВ, готовые конфигурации и понятные инструкции. Без лишних шагов — от установки до первого подключения за пару минут.</p>
-      <div class="hero-actions">
-        <a href="{LK}" class="btn btn-primary">{ico(I_key)} Получить доступ</a>
-        <a href="/skachat/" class="btn btn-ghost">{ico(I_dl)} Скачать Happ</a>
-      </div>
+      {cta_duo()}
       <div class="hero-meta"><span><b>4</b> платформы</span><span><b>2 мин</b> на запуск</span><span><b>24/7</b> поддержка в Telegram</span></div>
     </div></section>
 
@@ -92,7 +88,7 @@ def build(g):
       <h1>Скачать Happ</h1>
       <p class="hero-lead">Выберите платформу — откроется инструкция с актуальной ссылкой на загрузку и пошаговой установкой именно для вашей системы.</p>
       <div class="chips">{chips}</div>
-      <div class="hero-actions"><a href="{LK}" class="btn btn-primary">{ico(I_key)} Сначала получить ключ</a></div>
+      {cta_duo()}
     </div></section>
     <section><div class="wrap"><div class="prose">
       <h2>Какую версию выбрать</h2>
@@ -119,8 +115,8 @@ def build(g):
         <section class="hero" style="padding-top:34px"><div class="wrap">
           <h1>{h1}</h1>
           <p class="hero-lead">{lead}</p>
-          <div class="hero-actions"><a href="{LK}" class="btn btn-primary">{ico(I_key)} Получить ключ</a>
-          <a href="/config/" class="btn btn-ghost">Как добавить конфигурацию</a></div>
+          {cta_duo()}
+          <p class="muted" style="margin-top:14px;font-size:.92rem">Уже скачали? <a href="/config/" class="accent">Как добавить конфигурацию →</a></p>
         </div></section>
         <section><div class="wrap"><div class="prose">
           <h2>Установка пошагово</h2>
@@ -185,7 +181,7 @@ def build(g):
     <section class="hero" style="padding-top:34px"><div class="wrap">
       <h1>Конфигурации и ключи Happ</h1>
       <p class="hero-lead">Конфигурация — это и есть доступ к серверу. Без неё приложение установлено, но подключаться не к чему. Разбираем, что это такое и как добавить ключ за минуту.</p>
-      <div class="hero-actions"><a href="{LK}" class="btn btn-primary">{ico(I_key)} Получить конфигурацию</a></div>
+      {cta_duo()}
     </div></section>
     <section><div class="wrap"><div class="prose">
       <h2>Что такое конфигурация</h2>
