@@ -36,6 +36,9 @@ METRIKA = (
 
 THEME_JS = (
     "<script>(function(){try{var t=localStorage.getItem('theme');"
+    "if(t!=='dark'&&t!=='light'){"
+    "var h=parseInt(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Moscow',hour:'2-digit',hourCycle:'h23'}).format(new Date()),10);"
+    "t=(h>=20||h<7)?'dark':'light';}"
     "if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>"
 )
 THEME_TOGGLE_JS = (
