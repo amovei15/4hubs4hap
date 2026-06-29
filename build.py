@@ -148,7 +148,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=9">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=10">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'

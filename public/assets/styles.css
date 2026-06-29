@@ -213,13 +213,13 @@ section{padding:46px 0}
 @media(max-width:1040px){
   .nav-links{display:none}
   .nav-burger{display:grid;place-items:center}
-  .nav{background:var(--bg)}
+  .nav{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .drawer.open{display:block;position:fixed;inset:64px 0 0;background:var(--bg);z-index:49;padding:18px 22px;overflow:auto}
+  .drawer.open a{display:block;padding:13px 0;border-bottom:1px solid var(--line-soft);font-weight:600}
 }
 @media(max-width:920px){
   .g3,.g4,.price-grid{grid-template-columns:repeat(2,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
-  .drawer.open{display:block;position:fixed;inset:60px 0 0;background:var(--bg);z-index:49;padding:18px 22px;overflow:auto}
-  .drawer.open a{display:block;padding:13px 0;border-bottom:1px solid var(--line-soft);font-weight:600}
 }
 @media(max-width:620px){
   .g3,.g4,.g2,.price-grid{grid-template-columns:1fr}
