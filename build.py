@@ -68,17 +68,17 @@ CHECK = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="cur
 
 TG_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.34 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.46-2.27 2.18c-.25.25-.46.46-.94.46l.33-4.78L18.6 6.2c.38-.34-.08-.53-.59-.19L7.4 12.86l-4.64-1.45c-1.01-.32-1.03-1.01.21-1.49l18.15-7c.84-.31 1.58.2 1.31 1.41z"/></svg>'
 KEY_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M11.5 11.5 21 2M16 7l3 3"/></svg>'
-ARROW = '<svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+ARROW = '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 
 def cta_duo():
     return (
         '<div class="cta-duo">'
         f'<a href="{LK}" class="cta-card cta-lk"><span class="cta-ic">{KEY_ICON}</span>'
         '<span class="cta-tx"><b>Личный кабинет</b><span>Оформить доступ и получить конфигурацию</span></span>'
-        f'{ARROW}</a>'
+        f'<span class="cta-go">{ARROW}</span></a>'
         f'<a href="{TG}" class="cta-card cta-tg"><span class="cta-ic">{TG_ICON}</span>'
         '<span class="cta-tx"><b>Telegram-бот</b><span>Быстрый доступ и поддержка 24/7</span></span>'
-        f'{ARROW}</a>'
+        f'<span class="cta-go">{ARROW}</span></a>'
         '</div>'
     )
 
@@ -148,7 +148,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=4">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=5">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'
