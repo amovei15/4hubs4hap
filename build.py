@@ -103,7 +103,7 @@ def header(active):
     drawer = "".join(f'<a href="{u}">{html.escape(t)}</a>' for u, t in NAV)
     return (
         '<header class="nav"><div class="nav-inner">'
-        '<a href="/" class="brand"><span class="brand-mark">H</span>Happ&nbsp;Hub</a>'
+        '<a href="/" class="brand"><span class="brand-mark">H</span><span class="brand-wm">Happ&nbsp;Hub</span></a>'
         f'<nav class="nav-links" aria-label="Главное меню">{links}</nav>'
         '<div class="nav-right">'
         f'<button class="theme-btn" type="button" aria-label="Сменить тему" onclick="toggleTheme()">{SUN}</button>'
@@ -149,7 +149,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=13">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=14">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'
