@@ -202,9 +202,9 @@ section{padding:46px 0}
 .foot-bottom{margin-top:28px;padding-top:18px;border-top:1px solid var(--line-soft);font-size:.86rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 .kw-sec{padding:38px 0}
-.kwc{display:flex;flex-wrap:wrap;gap:8px;max-width:980px}
-.kwc span{font-size:.82rem;color:var(--ink-soft);background:var(--bg-card);border:1px solid var(--line);
-  padding:6px 12px;border-radius:9px;line-height:1.2}
+.kwc{display:flex;flex-wrap:wrap;gap:7px;max-width:980px}
+.kwc span{font-size:.8rem;color:var(--muted);background:var(--bg-card);border:1px solid var(--line);
+  padding:5px 11px;border-radius:8px;line-height:1.25}
 .kwc span:hover{border-color:var(--accent-soft);color:var(--accent)}
 
 .crumbs{font-size:.85rem;color:var(--muted);padding:18px 0 0}
@@ -226,4 +226,7 @@ section{padding:46px 0}
   body{font-size:16px}
   .hero{padding:46px 0 30px}
   .band{padding:26px}
+  .kw-sec{padding:30px 0}
+  .kwc{gap:6px}
+  .kwc span{font-size:.75rem;padding:5px 10px;border-radius:7px}
 }
