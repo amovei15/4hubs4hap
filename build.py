@@ -77,10 +77,10 @@ def cta_duo():
     return (
         '<div class="cta-duo">'
         f'<a href="{LK}" class="cta-card cta-lk"><span class="cta-ic">{KEY_ICON}</span>'
-        '<span class="cta-tx"><b>Личный кабинет</b><span>Оформить доступ и получить конфигурацию</span></span>'
+        '<b>Личный кабинет</b>'
         f'<span class="cta-go">{ARROW}</span></a>'
         f'<a href="{TG}" class="cta-card cta-tg"><span class="cta-ic">{TG_ICON}</span>'
-        '<span class="cta-tx"><b>Telegram-бот</b><span>Быстрый доступ и поддержка 24/7</span></span>'
+        '<b>Telegram-бот</b>'
         f'<span class="cta-go">{ARROW}</span></a>'
         '</div>'
     )
@@ -151,7 +151,7 @@ def page(slug, title, desc, body, active=None):
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
-        '<link rel="stylesheet" href="/assets/styles.css?v=10">'
+        '<link rel="stylesheet" href="/assets/styles.css?v=11">'
         '<link rel="preconnect" href="https://mc.yandex.ru" crossorigin>'
         + THEME_JS + METRIKA +
         '</head><body>'
