@@ -189,6 +189,10 @@ section{padding:46px 0}
 .foot a:hover{color:var(--accent)}
 .foot h4{font-family:var(--display);font-size:.92rem;color:var(--ink);margin:0 0 8px;text-transform:uppercase;letter-spacing:.05em}
 .foot-bottom{margin-top:28px;padding-top:18px;border-top:1px solid var(--line-soft);font-size:.86rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot-contacts{display:flex;flex-direction:column;gap:5px;margin-top:14px;font-size:.93rem}
+.foot-contacts a{color:var(--ink-soft);font-weight:700;display:inline-block;padding:0}
+.foot-contacts a:hover{color:var(--accent)}
+.foot-contacts span{color:var(--muted)}
 
 .kw-sec{padding:38px 0}
 .kwc{display:flex;flex-wrap:wrap;gap:7px;max-width:980px}
