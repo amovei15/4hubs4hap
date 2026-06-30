@@ -146,6 +146,7 @@ def page(slug, title, desc, body, active=None):
         f'<link rel="canonical" href="{canonical}">'
         f'<meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">'
         f'<meta property="og:type" content="website"><meta property="og:url" content="{canonical}">'
+        '<meta name="yandex-verification" content="b33d2d2b84c9eabc">'
         '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&family=JetBrains+Mono:wght@500&display=swap">'
